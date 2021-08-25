@@ -1,6 +1,6 @@
 namespace FreeCourse.Services.Catalog.Models
 {
-    public class Feature
+    public class FeatureEntity
     {
         public short Duration { get; set; }
     }

@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace FreeCourse.Services.Catalog.Models
 {
-    public class Course
+    public class CourseEntity
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -18,12 +18,12 @@ namespace FreeCourse.Services.Catalog.Models
         public DateTime CreatedDate { get; set; }
 
         public string UserId { get; set; }
-        public Feature Feature { get; set; }
+        public FeatureEntity FeatureEntity { get; set; }
         
         [BsonRepresentation(BsonType.ObjectId)]
         public string CategoryId { get; set; }
 
         [BsonIgnore]
-        public Category Category { get; set; }
+        public CategoryEntity CategoryEntity { get; set; }
     }
 }
