@@ -1,8 +1,7 @@
 namespace FreeCourse.Services.Catalog.Models.Request
 {
-    public class CategoryRequest
+    internal class AddCategoryRequest
     {
-        public string Id { get; set; }
         public string Name { get; set; }
     }
 }

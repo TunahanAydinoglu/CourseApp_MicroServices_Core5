@@ -7,10 +7,8 @@ namespace FreeCourse.CoreLib.BaseModels
     {
         public T Data { get; private set; }
 
-        [JsonIgnore]
-        public int StatusCode { get; private set; }
-        [JsonIgnore]
-        public bool IsSuccessful { get; private set; }
+        [JsonIgnore] public int StatusCode { get; private set; }
+        [JsonIgnore] public bool IsSuccessful { get; private set; }
 
         public List<string> Infos { get; set; }
 
@@ -29,6 +27,19 @@ namespace FreeCourse.CoreLib.BaseModels
             return new BaseResponse<T>
             {
                 Infos = errors,
+                StatusCode = statusCode,
+                IsSuccessful = false
+            };
+        }
+
+        public static BaseResponse<T> Error(string error, int statusCode)
+        {
+            return new BaseResponse<T>
+            {
+                Infos = new List<string>
+                {
+                    error
+                },
                 StatusCode = statusCode,
                 IsSuccessful = false
             };
