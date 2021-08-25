@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "j/kEEUVInwrP7pc5mjqjClfCvFV101Cr/vCrf4/3bX5XpIb8N6tw5Yo8PYdBZaQ56k9GYrh1GjpkTa8KhSdaCw==",
+  "success": true,
+  "projectFilePath": "/Users/tunahan.aydinoglu/Desktop/Projects/CourseApp_MicroServices_Core5/Services/Catalog/FreeCourse.Services.Catalog/FreeCourse.Services.Catalog.csproj",
+  "expectedPackageFiles": [
+    "/Users/tunahan.aydinoglu/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/tunahan.aydinoglu/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/tunahan.aydinoglu/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/Users/tunahan.aydinoglu/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/Users/tunahan.aydinoglu/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/Users/tunahan.aydinoglu/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
