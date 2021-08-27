@@ -1,15 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C934B269-4C40-46AF-AE38-AD9CC17204DB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catolog", "Catolog", "{DFAF9C9B-59AF-43C8-AB5C-493398743347}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseApp.Services.Catalog", "Service\Catalog\CourseApp.Services.Catalog\CourseApp.Services.Catalog.csproj", "{AA81658A-6F5A-4C01-B37E-858FB32C6D9E}"
-EndProject
+# Visual Studio Version 16
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionsProperties", "SolutionsProperties", "{54DC1FD2-9783-45C5-8F8C-33C7158A2486}"
-ProjectSection(SolutionItems) = preProject
-	Ports.txt = Ports.txt
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		Ports.txt = Ports.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{1D14B731-1C4B-4EF9-AFD5-C0221C10D6EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{14AE1E91-6EB2-4732-A3EC-C038BAAC8248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.Catalog", "Services\Catalog\FreeCourse.Services.Catalog\FreeCourse.Services.Catalog.csproj", "{F82F0449-2498-4313-BDDE-02D36064790D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DB2CC99A-66B7-40D0-BA5E-85AFA4777868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.CoreLib", "Core\FreeCourse.CoreLib\FreeCourse.CoreLib.csproj", "{D9C75E36-9726-4BD1-9FFE-FE40C469974A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +22,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DFAF9C9B-59AF-43C8-AB5C-493398743347} = {C934B269-4C40-46AF-AE38-AD9CC17204DB}
-		{AA81658A-6F5A-4C01-B37E-858FB32C6D9E} = {DFAF9C9B-59AF-43C8-AB5C-493398743347}
+		{1D14B731-1C4B-4EF9-AFD5-C0221C10D6EE} = {54DC1FD2-9783-45C5-8F8C-33C7158A2486}
+		{14AE1E91-6EB2-4732-A3EC-C038BAAC8248} = {1D14B731-1C4B-4EF9-AFD5-C0221C10D6EE}
+		{F82F0449-2498-4313-BDDE-02D36064790D} = {14AE1E91-6EB2-4732-A3EC-C038BAAC8248}
+		{DB2CC99A-66B7-40D0-BA5E-85AFA4777868} = {54DC1FD2-9783-45C5-8F8C-33C7158A2486}
+		{D9C75E36-9726-4BD1-9FFE-FE40C469974A} = {DB2CC99A-66B7-40D0-BA5E-85AFA4777868}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA81658A-6F5A-4C01-B37E-858FB32C6D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA81658A-6F5A-4C01-B37E-858FB32C6D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA81658A-6F5A-4C01-B37E-858FB32C6D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA81658A-6F5A-4C01-B37E-858FB32C6D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F82F0449-2498-4313-BDDE-02D36064790D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82F0449-2498-4313-BDDE-02D36064790D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82F0449-2498-4313-BDDE-02D36064790D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82F0449-2498-4313-BDDE-02D36064790D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9C75E36-9726-4BD1-9FFE-FE40C469974A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C75E36-9726-4BD1-9FFE-FE40C469974A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C75E36-9726-4BD1-9FFE-FE40C469974A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9C75E36-9726-4BD1-9FFE-FE40C469974A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
