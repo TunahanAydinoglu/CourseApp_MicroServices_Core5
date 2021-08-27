@@ -31,8 +31,8 @@ namespace FreeCourse.Services.Catalog.Services.Course
 
         public async Task<BaseResponse<NoContent>> CreateAsync(CreateCourseRequest requestModel, CancellationToken cancellationToken)
         {
-            var dbCategory = await _categoryCollection.Find(c => c.Id == requestModel.CategoryId).FirstOrDefaultAsync(cancellationToken: cancellationToken);
-            if (dbCategory == null)
+            var isCategoryExist = await IsCategoryExist(requestModel.CategoryId, cancellationToken);
+            if (isCategoryExist)
             {
                 return BaseResponse<NoContent>.Error("Category is not exist!", 400);
             }
@@ -94,7 +94,12 @@ namespace FreeCourse.Services.Catalog.Services.Course
             var updateCourse = _mapper.Map<CourseEntity>(updateModel);
             updateCourse.Id = courseId;
 
-         
+            var isCategoryExist = await IsCategoryExist(updateModel.CategoryId, cancellationToken);
+            if (isCategoryExist)
+            {
+                return BaseResponse<NoContent>.Error("Category is not exist!", 400);
+            }
+            
             var result = await _courseCollection.FindOneAndReplaceAsync(x => x.Id.Equals(courseId), updateCourse, cancellationToken: cancellationToken);
 
             if (result == null)
@@ -109,17 +114,16 @@ namespace FreeCourse.Services.Catalog.Services.Course
         {
             var result = await _courseCollection.DeleteOneAsync(x => x.Id.Equals(courseId), cancellationToken: cancellationToken);
 
-            return result.DeletedCount > 0 ? BaseResponse<NoContent>.Success(204) : BaseResponse<NoContent>.Error("Course not found", 404);
+            return result.DeletedCount > 0 
+                ? BaseResponse<NoContent>.Success(204)
+                : BaseResponse<NoContent>.Error("Course not found", 404);
         }
-
 
         private async Task<bool> IsCategoryExist(string categoryId, CancellationToken cancellationToken)
         {
-            var dbCategory = await _categoryCollection.Find(c => c.Id == updateModel.CategoryId).FirstOrDefaultAsync(cancellationToken: cancellationToken);
-            if (dbCategory == null)
-            {
-                return BaseResponse<NoContent>.Error("Category is not exist!", 400);
-            }
+            var dbCategory = await _categoryCollection.Find(c => c.Id.Equals(categoryId)).FirstOrDefaultAsync(cancellationToken: cancellationToken);
+
+            return dbCategory != null;
         }
     }
 }

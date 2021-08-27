@@ -1,10 +1,11 @@
+using System.Data;
 using FluentValidation;
 
 namespace FreeCourse.Services.Catalog.Models.Request
 {
     public class FeatureRequest
     {
-        public short Duration { get; set; }
+        public int Duration { get; set; }
     }
 
     public class FeatureRequestValidator : AbstractValidator<FeatureRequest>
