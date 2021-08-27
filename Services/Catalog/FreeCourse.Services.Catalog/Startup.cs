@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FreeCourse.Services.Catalog.Services;
+using FreeCourse.Services.Catalog.Services.Course;
 using FreeCourse.Services.Catalog.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,6 +37,7 @@ namespace FreeCourse.Services.Catalog
             services.AddSingleton<IDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
             services.AddScoped<ICategoryServices, CategoryServices>();
+            services.AddScoped<ICourseServices, CourseServices>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

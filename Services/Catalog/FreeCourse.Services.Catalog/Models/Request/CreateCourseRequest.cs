@@ -1,9 +1,6 @@
-using System;
-using FreeCourse.Services.Catalog.Models.Response;
-
 namespace FreeCourse.Services.Catalog.Models.Request
 {
-    public class AddCourseRequest
+    internal class CreateCourseRequest
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
