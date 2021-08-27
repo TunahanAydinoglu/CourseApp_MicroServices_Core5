@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>FreeCourse.Services.Catalog</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\Core\FreeCourse.CoreLib\FreeCourse.CoreLib.csproj" />
+      <ProjectReference Include="..\..\Core\FreeCourse.CoreLib\FreeCourse.CoreLib.csproj" />
     </ItemGroup>
 
 </Project>

@@ -38,7 +38,7 @@ namespace FreeCourse.Services.Catalog
                     jopt.JsonSerializerOptions.IgnoreNullValues = true;
                 });
             
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "FreeCourse.Services.Catalog", Version = "v1"}); });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "DistLearn.Services.Catalog", Version = "v1"}); });
             services.AddAutoMapper(typeof(Startup));
 
             services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
@@ -54,7 +54,7 @@ namespace FreeCourse.Services.Catalog
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FreeCourse.Services.Catalog v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DistLearn.Services.Catalog v1"));
             }
 
             // app.UseHttpsRedirection();
