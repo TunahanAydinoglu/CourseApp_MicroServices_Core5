@@ -9,11 +9,13 @@ namespace FreeCourse.Services.Catalog.Mappers
     {
         public AutoMapper()
         {
-            CreateMap<CourseEntity, CategoryResponse>();
             CreateMap<CategoryEntity, CategoryResponse>();
-            CreateMap<FeatureEntity, FeatureResponse>();
             CreateMap<CreateCategoryRequest, CategoryEntity>();
+            
+            CreateMap<FeatureEntity, FeatureResponse>();
+            CreateMap<FeatureRequest, FeatureEntity>();
 
+            CreateMap<CourseEntity, CourseResponse>();
             CreateMap<CreateCourseRequest, CourseEntity>();
             CreateMap<UpdateCourseRequest, CourseEntity>();
         }

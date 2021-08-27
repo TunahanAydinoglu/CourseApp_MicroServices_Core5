@@ -10,7 +10,7 @@ namespace FreeCourse.Services.Catalog.Models.Request
         public string Description { get; set; }
         public string Picture { get; set; }
         public string UserId { get; set; }
-        public FeatureEntity FeatureEntity { get; set; }
+        public FeatureRequest FeatureRequest { get; set; }
         public string CategoryId { get; set; }
     }
 
@@ -21,10 +21,10 @@ namespace FreeCourse.Services.Catalog.Models.Request
             RuleFor(x => x.Name).NotEmpty();
             RuleFor(x => x.Description).NotEmpty();
             RuleFor(x => x.Picture).NotEmpty();
+            RuleFor(x => x.Price).NotEmpty();
             
             RuleFor(x => x.UserId).NotEmpty().Must(CustomValidators.IsObjectId).WithMessage("UserId objectId tipinde olmalidir.");
             RuleFor(x => x.CategoryId).NotEmpty().Must(CustomValidators.IsObjectId).WithMessage("CategoryId objectId tipinde olmalidir.");
-            
         }
 
         

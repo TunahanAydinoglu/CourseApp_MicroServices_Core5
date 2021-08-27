@@ -31,7 +31,12 @@ namespace FreeCourse.Services.Catalog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()        
-                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>())
+                .AddJsonOptions(jopt =>
+                {
+                    jopt.JsonSerializerOptions.PropertyNamingPolicy = null;
+                    jopt.JsonSerializerOptions.IgnoreNullValues = true;
+                });
             
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "FreeCourse.Services.Catalog", Version = "v1"}); });
             services.AddAutoMapper(typeof(Startup));
