@@ -1,6 +1,9 @@
+using FluentValidation;
+using FreeCourse.CoreLib.Utils;
+
 namespace FreeCourse.Services.Catalog.Models.Request
 {
-    internal class CreateCourseRequest
+    public class CreateCourseRequest
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
@@ -10,4 +13,21 @@ namespace FreeCourse.Services.Catalog.Models.Request
         public FeatureEntity FeatureEntity { get; set; }
         public string CategoryId { get; set; }
     }
+
+    public class CreateCourseRequestValidator : AbstractValidator<CreateCourseRequest>
+    {
+        public CreateCourseRequestValidator()
+        {
+            RuleFor(x => x.Name).NotEmpty();
+            RuleFor(x => x.Description).NotEmpty();
+            RuleFor(x => x.Picture).NotEmpty();
+            
+            RuleFor(x => x.UserId).NotEmpty().Must(CustomValidators.IsObjectId).WithMessage("UserId objectId tipinde olmalidir.");
+            RuleFor(x => x.CategoryId).NotEmpty().Must(CustomValidators.IsObjectId).WithMessage("CategoryId objectId tipinde olmalidir.");
+            
+        }
+
+        
+    }
+    
 }

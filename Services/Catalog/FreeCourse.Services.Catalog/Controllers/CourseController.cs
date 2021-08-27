@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FreeCourse.Services.Catalog.Controllers
 {
-    internal class CourseController : BaseController
+    public class CourseController : BaseController
     {
         private readonly ICourseServices _courseServices;
 
@@ -17,7 +17,7 @@ namespace FreeCourse.Services.Catalog.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] string userId, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetCources([FromQuery] string userId, CancellationToken cancellationToken)
         {
             var response = await _courseServices.GetAllAsync(userId, cancellationToken);
 
@@ -25,7 +25,7 @@ namespace FreeCourse.Services.Catalog.Controllers
         }
 
         [HttpGet("{courseId}")]
-        public async Task<IActionResult> GetById(string courseId, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetCourseById(string courseId, CancellationToken cancellationToken)
         {
             var response = await _courseServices.GetByIdAsync(courseId, cancellationToken);
 

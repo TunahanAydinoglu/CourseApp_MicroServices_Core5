@@ -25,9 +25,10 @@ namespace FreeCourse.Services.Catalog.Services
             _mapper = mapper;
         }
 
-        public async Task<BaseResponse<NoContent>> CreateAsync(CategoryEntity requestModel, CancellationToken cancellationToken)
+        public async Task<BaseResponse<NoContent>> CreateAsync(CreateCategoryRequest requestModel, CancellationToken cancellationToken)
         {
-            await _categoryCollection.InsertOneAsync(requestModel, cancellationToken: cancellationToken);
+            var categoryEntity = _mapper.Map<CategoryEntity>(requestModel);
+            await _categoryCollection.InsertOneAsync(categoryEntity, cancellationToken: cancellationToken);
             return BaseResponse<NoContent>.Success(201);
         }
         

@@ -7,7 +7,7 @@ using FreeCourse.Services.Catalog.Models.Response;
 
 namespace FreeCourse.Services.Catalog.Services.Course
 {
-    internal interface ICourseServices
+    public interface ICourseServices
     {
         Task<BaseResponse<NoContent>> CreateAsync(CreateCourseRequest requestModel, CancellationToken cancellationToken);
         Task<BaseResponse<List<CourseResponse>>> GetAllAsync(string userId, CancellationToken cancellationToken);

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
 using FreeCourse.Services.Catalog.Services;
 using FreeCourse.Services.Catalog.Services.Course;
 using FreeCourse.Services.Catalog.Settings;
@@ -29,7 +30,9 @@ namespace FreeCourse.Services.Catalog
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()        
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+            
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "FreeCourse.Services.Catalog", Version = "v1"}); });
             services.AddAutoMapper(typeof(Startup));
 
@@ -49,7 +52,7 @@ namespace FreeCourse.Services.Catalog
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FreeCourse.Services.Catalog v1"));
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 

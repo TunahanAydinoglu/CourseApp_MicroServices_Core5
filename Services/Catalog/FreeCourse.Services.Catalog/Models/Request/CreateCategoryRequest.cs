@@ -1,7 +1,17 @@
+using FluentValidation;
+
 namespace FreeCourse.Services.Catalog.Models.Request
 {
-    internal class CreateCategoryRequest
+    public class CreateCategoryRequest
     {
         public string Name { get; set; }
+    }
+    
+    public class CreateCategoryRequestValidator : AbstractValidator<CreateCategoryRequest>
+    {
+        public CreateCategoryRequestValidator()
+        {
+            RuleFor(x => x.Name).NotEmpty();
+        }
     }
 }

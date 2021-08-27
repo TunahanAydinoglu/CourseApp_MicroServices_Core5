@@ -31,10 +31,16 @@ namespace FreeCourse.Services.Catalog.Services.Course
 
         public async Task<BaseResponse<NoContent>> CreateAsync(CreateCourseRequest requestModel, CancellationToken cancellationToken)
         {
-            var courseModel = _mapper.Map<CourseEntity>(requestModel);
-            courseModel.CreatedDate = DateTime.Now;
+            var dbCategory = await _categoryCollection.Find(c => c.Id == requestModel.CategoryId).FirstOrDefaultAsync(cancellationToken: cancellationToken);
+            if (dbCategory == null)
+            {
+                return BaseResponse<NoContent>.Error("Category is not exist!", 400);
+            }
 
-            await _courseCollection.InsertOneAsync(courseModel, cancellationToken: cancellationToken);
+            var courseEntity = _mapper.Map<CourseEntity>(requestModel);
+            courseEntity.CreatedDate = DateTime.Now;
+
+            await _courseCollection.InsertOneAsync(courseEntity, cancellationToken: cancellationToken);
             return BaseResponse<NoContent>.Success(201);
         }
 

@@ -12,6 +12,7 @@ namespace FreeCourse.Services.Catalog.Mappers
             CreateMap<CourseEntity, CategoryResponse>();
             CreateMap<CategoryEntity, CategoryResponse>();
             CreateMap<FeatureEntity, FeatureResponse>();
+            CreateMap<CreateCategoryRequest, CategoryEntity>();
 
             CreateMap<CreateCourseRequest, CourseEntity>();
             CreateMap<UpdateCourseRequest, CourseEntity>();
